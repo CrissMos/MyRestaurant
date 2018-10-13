@@ -221,11 +221,16 @@
     <Compile Include="Migrations\201810132015120_AddProductTable.Designer.cs">
       <DependentUpon>201810132015120_AddProductTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201810132328360_AddRestaurantTableTable.cs" />
+    <Compile Include="Migrations\201810132328360_AddRestaurantTableTable.Designer.cs">
+      <DependentUpon>201810132328360_AddRestaurantTableTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Product.cs" />
+    <Compile Include="Models\RestaurantTable.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -292,6 +297,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="ViewModels\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -312,6 +318,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201810132015120_AddProductTable.resx">
       <DependentUpon>201810132015120_AddProductTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201810132328360_AddRestaurantTableTable.resx">
+      <DependentUpon>201810132328360_AddRestaurantTableTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
