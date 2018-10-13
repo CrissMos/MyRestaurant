@@ -217,10 +217,15 @@
     <Compile Include="Migrations\201810131532478_InitialCreate.Designer.cs">
       <DependentUpon>201810131532478_InitialCreate.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201810132015120_AddProductTable.cs" />
+    <Compile Include="Migrations\201810132015120_AddProductTable.Designer.cs">
+      <DependentUpon>201810132015120_AddProductTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\Product.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -304,6 +309,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201810131532478_InitialCreate.resx">
       <DependentUpon>201810131532478_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201810132015120_AddProductTable.resx">
+      <DependentUpon>201810132015120_AddProductTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
