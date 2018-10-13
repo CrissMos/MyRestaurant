@@ -5,14 +5,16 @@ using System.Web;
 
 namespace MyRestaurant.Models
 {
-    public class RestaurantTable
+    public class Reservation
     {
         public int Id { get; set; }
 
+        public int Number { get; set; }
+
         public string Name { get; set; }
 
-        public int NumberOfSeats { get; set; }
+        public RestaurantTable Table { get; set; }
 
-        public ICollection<Reservation> Reservations { get; set; }
+        public int RestaurantTableId { get; set; }
     }
 }

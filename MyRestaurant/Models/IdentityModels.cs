@@ -22,6 +22,15 @@ namespace MyRestaurant.Models
     {
         public DbSet<Product> Products { get; set; }
         public DbSet<RestaurantTable> RestaurantTables { get; set; }
+        public DbSet<Reservation> Reservations { get; set; }
+
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<RestaurantTable>()
+                .HasMany(r => r.Reservations)
+                .WithRequired(t => t.Table);
+            base.OnModelCreating(modelBuilder);
+        }
 
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
