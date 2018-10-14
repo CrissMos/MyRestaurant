@@ -1,0 +1,35 @@
+﻿@model IEnumerable<MyRestaurant.Models.Table>
+
+@{
+    ViewBag.Title = "Tables";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Tables</h2>
+@if (!Model.Any())
+{
+    <p>There is no tables in Restaurant app.</p>
+}
+else
+{
+
+
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Number Of Seats</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var table in Model)
+            {
+                <tr>
+                    <td>@table.Name</td>
+                    <td>@table.NumberOfSeats</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
