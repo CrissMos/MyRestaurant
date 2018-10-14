@@ -5,7 +5,7 @@ using System.Web;
 
 namespace MyRestaurant.Models
 {
-    public class RestaurantTable
+    public class Table
     {
         public int Id { get; set; }
 

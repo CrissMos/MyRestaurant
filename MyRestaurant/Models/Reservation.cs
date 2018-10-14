@@ -13,8 +13,8 @@ namespace MyRestaurant.Models
 
         public string Name { get; set; }
 
-        public RestaurantTable Table { get; set; }
+        public Table Table { get; set; }
 
-        public int RestaurantTableId { get; set; }
+        public int TableId { get; set; }
     }
 }

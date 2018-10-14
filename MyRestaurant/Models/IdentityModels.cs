@@ -21,12 +21,12 @@ namespace MyRestaurant.Models
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public DbSet<Product> Products { get; set; }
-        public DbSet<RestaurantTable> RestaurantTables { get; set; }
+        public DbSet<Table> Tables { get; set; }
         public DbSet<Reservation> Reservations { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<RestaurantTable>()
+            modelBuilder.Entity<Table>()
                 .HasMany(r => r.Reservations)
                 .WithRequired(t => t.Table);
             base.OnModelCreating(modelBuilder);

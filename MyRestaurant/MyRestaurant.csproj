@@ -230,13 +230,17 @@
     <Compile Include="Migrations\201810132347349_AddReservationTable.Designer.cs">
       <DependentUpon>201810132347349_AddReservationTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201810141327517_RenameRestaurantTableToTable.cs" />
+    <Compile Include="Migrations\201810141327517_RenameRestaurantTableToTable.Designer.cs">
+      <DependentUpon>201810141327517_RenameRestaurantTableToTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Product.cs" />
     <Compile Include="Models\Reservation.cs" />
-    <Compile Include="Models\RestaurantTable.cs" />
+    <Compile Include="Models\Table.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -332,6 +336,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201810132347349_AddReservationTable.resx">
       <DependentUpon>201810132347349_AddReservationTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201810141327517_RenameRestaurantTableToTable.resx">
+      <DependentUpon>201810141327517_RenameRestaurantTableToTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
