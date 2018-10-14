@@ -23,6 +23,7 @@ namespace MyRestaurant.Models
         public DbSet<Product> Products { get; set; }
         public DbSet<Table> Tables { get; set; }
         public DbSet<Reservation> Reservations { get; set; }
+        public object Include { get; internal set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
