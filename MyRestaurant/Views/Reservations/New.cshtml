@@ -1,0 +1,28 @@
+﻿@model MyRestaurant.ViewModels.NewReservationViewModel
+@{
+    ViewBag.Title = "New";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>New Reservation</h2>
+
+@using (Html.BeginForm("Create", "Reservations"))
+{
+    <div class="form-group">
+        @Html.LabelFor(r => r.Reservation.Number)
+        @Html.TextBoxFor(r => r.Reservation.Number, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(r => r.Reservation.Name)
+        @Html.TextBoxFor(r => r.Reservation.Name, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(r => r.Reservation.Date)
+        @Html.TextBoxFor(r => r.Reservation.Date, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(r => r.Reservation.TableId)
+        @Html.DropDownListFor(r => r.Reservation.TableId, new SelectList(Model.Tables,"Id", "Name"), "", new { @class = "form-control" })
+    </div>
+}
+

@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.Data.Entity;
 using MyRestaurant.Models;
+using MyRestaurant.ViewModels;
 
 namespace MyRestaurant.Controllers
 {
@@ -38,6 +39,17 @@ namespace MyRestaurant.Controllers
                 return HttpNotFound();
 
             return View(reserve);
+        }
+
+        public ActionResult New()
+        {
+            var tables = _context.Tables.ToList();
+            var viewModel = new NewReservationViewModel
+            {
+                Tables = tables
+            };
+
+            return View(viewModel);
         }
     }
 }
