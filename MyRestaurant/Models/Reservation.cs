@@ -19,5 +19,7 @@ namespace MyRestaurant.Models
         public Table Table { get; set; }
 
         public int TableId { get; set; }
+
+        public DateTime? Date { get; set; }
     }
 }

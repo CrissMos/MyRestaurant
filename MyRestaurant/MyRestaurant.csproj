@@ -248,6 +248,10 @@
     <Compile Include="Migrations\201810141643300_ApplyAnnotationToNameInTable.Designer.cs">
       <DependentUpon>201810141643300_ApplyAnnotationToNameInTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201810161305344_AddDateToReservationTable.cs" />
+    <Compile Include="Migrations\201810161305344_AddDateToReservationTable.Designer.cs">
+      <DependentUpon>201810161305344_AddDateToReservationTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -366,6 +370,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201810141643300_ApplyAnnotationToNameInTable.resx">
       <DependentUpon>201810141643300_ApplyAnnotationToNameInTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201810161305344_AddDateToReservationTable.resx">
+      <DependentUpon>201810161305344_AddDateToReservationTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
