@@ -6,7 +6,7 @@ using System.Web;
 
 namespace MyRestaurant.ViewModels
 {
-    public class NewReservationViewModel
+    public class ReservationViewModel
     {
         public IEnumerable<Table> Tables { get; set; }
         public Reservation Reservation { get; set; }

@@ -329,7 +329,7 @@
     <Content Include="Views\Tables\Details.cshtml" />
     <Content Include="Views\Reservations\Index.cshtml" />
     <Content Include="Views\Reservations\Details.cshtml" />
-    <Content Include="Views\Reservations\New.cshtml" />
+    <Content Include="Views\Reservations\ReservationForm.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

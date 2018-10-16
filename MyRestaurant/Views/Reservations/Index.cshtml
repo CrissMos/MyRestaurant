@@ -25,7 +25,7 @@ else
             {
                 <tr>
                     <td>@reserve.Number</td> 
-                    <td>@Html.ActionLink(reserve.Name, "Details", "Reservations", new { id = reserve.Id }, null)</td>                   
+                    <td>@Html.ActionLink(reserve.Name, "Edit", "Reservations", new { id = reserve.Id }, null)</td>                   
                     <td>@reserve.Table.Name</td>
                 </tr>
             }

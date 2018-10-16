@@ -33,23 +33,58 @@ namespace MyRestaurant.Controllers
 
         public ActionResult Details(int id)
         {
-            var reserve = _context.Reservations.Include(c => c.Table).SingleOrDefault(r => r.Id == id);
+            var reservevation = _context.Reservations.Include(c => c.Table).SingleOrDefault(r => r.Id == id);
 
-            if (reserve == null)
+            if (reservevation == null)
                 return HttpNotFound();
 
-            return View(reserve);
+            return View(reservevation);
         }
 
         public ActionResult New()
         {
             var tables = _context.Tables.ToList();
-            var viewModel = new NewReservationViewModel
+            var viewModel = new ReservationViewModel
             {
                 Tables = tables
             };
 
-            return View(viewModel);
+            return View("ReservationForm", viewModel);
+        }
+
+        [HttpPost]
+        public ActionResult Save(Reservation reservation)
+        {
+            if (reservation.Id == 0)
+                _context.Reservations.Add(reservation);
+            else
+            {
+                var reservationInDb = _context.Reservations.Single(r => r.Id == reservation.Id);
+                reservationInDb.Number = reservation.Number;
+                reservationInDb.Name = reservation.Name;
+                reservationInDb.Date = reservation.Date;
+                reservationInDb.TableId = reservation.TableId;
+            }
+            //_context.Reservations.Add(reservation);
+            _context.SaveChanges();
+
+            return RedirectToAction("Index", "Reservations");
+        }
+
+        public ActionResult Edit(int id)
+        {
+            var reserve = _context.Reservations.SingleOrDefault(r => r.Id == id);
+
+            if (reserve == null)
+                return HttpNotFound();
+
+            var viewModel = new ReservationViewModel
+            {
+                Reservation = reserve,
+                Tables = _context.Tables.ToList()
+            };
+
+            return View("ReservationForm", viewModel);
         }
     }
 }
