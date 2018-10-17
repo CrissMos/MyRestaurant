@@ -84,7 +84,17 @@ namespace MyRestaurant.Controllers
                 Tables = _context.Tables.ToList()
             };
 
-            return View("ReservationForm", viewModel);
+            return View("ReservationForm", viewModel);  
+        }
+
+        public ActionResult Delete(int id)
+        {
+            var reservation = _context.Reservations.SingleOrDefault(r => r.Id == id);
+
+            _context.Reservations.Remove(reservation);
+            _context.SaveChanges();
+
+            return RedirectToAction("Index");
         }
     }
 }

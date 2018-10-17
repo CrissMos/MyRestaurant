@@ -6,13 +6,16 @@
 }
 
 <h2>Reservations</h2>
+
+<p>@Html.ActionLink("New Reservation", "New", "Reservations", new { @class = "btn btn-primary" }, null)</p>
+
 @if (!Model.Any())
 {
     <p>There is no reservations for the moment.</p>
 }
 else
 {
-    <table class="table table-bordered">
+    <table class="table table-hover">
         <thead>
             <tr>
                 <th>Number</th>
@@ -21,12 +24,17 @@ else
             </tr>
         </thead>
         <tbody>
-            @foreach(var reserve in Model)
+            @foreach (var reserve in Model)
             {
                 <tr>
-                    <td>@reserve.Number</td> 
-                    <td>@Html.ActionLink(reserve.Name, "Edit", "Reservations", new { id = reserve.Id }, null)</td>                   
+                    <td>@reserve.Number</td>
+                    <td>@reserve.Name</td>
                     <td>@reserve.Table.Name</td>
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", new { id = reserve.Id }, null) | 
+                        @Html.ActionLink("Delete", "Delete", new { id = reserve.Id }, null)
+                    </td>
+
                 </tr>
             }
         </tbody>
