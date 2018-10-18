@@ -14,6 +14,7 @@ namespace MyRestaurant.Models
         [StringLength(255)]
         public string Name { get; set; }
 
+        [Display(Name ="Number of Seats")]
         public int NumberOfSeats { get; set; }
 
         public ICollection<Reservation> Reservations { get; set; }
