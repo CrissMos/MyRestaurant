@@ -6,6 +6,9 @@
 }
 
 <h2>Tables</h2>
+
+<p>@Html.ActionLink("New Table", "New", "Tables", new { @class = "btn btn-primary" }, null)</p>
+
 @if (!Model.Any())
 {
     <p>There is no tables in Restaurant app.</p>
@@ -14,7 +17,7 @@ else
 {
 
 
-    <table class="table table-bordered">
+    <table class="table table-hover">
         <thead>
             <tr>
                 <th>Name</th>
@@ -27,6 +30,11 @@ else
                 <tr>
                     <td>@table.Name</td>
                     <td>@table.NumberOfSeats</td>
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", new { id = table.Id }, null) |
+                        @Html.ActionLink("Details", "Details", new { id = table.Id }, null) |
+                        @Html.ActionLink("Delete", "Delete", new { id = table.Id }, null)
+                    </td>
                 </tr>
             }
         </tbody>

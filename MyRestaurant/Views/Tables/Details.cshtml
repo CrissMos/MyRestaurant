@@ -1,14 +1,21 @@
-﻿@model MyRestaurant.Models.Table
+﻿@model MyRestaurant.ViewModels.TableViewModel
 
 @{
-    ViewBag.Title = Model.Name;
+    ViewBag.Title = Model.Table.Name;
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>@Model.Name</h2>
+<h2>@Model.Table.Name</h2>
 
 <ul>
-    <li>Name: @Model.Name</li>
-    <li>Number Of Seats: @Model.NumberOfSeats</li>
-</ul>
+    <li>Name: @Model.Table.Name</li>
+    <li>Number Of Seats: @Model.Table.NumberOfSeats</li>
+    @foreach (var item in Model.Table.Reservations)
+    {
 
+        <ul>
+            <li>@Html.DisplayFor(modelItem => item.Number)</li>
+            <li>@Html.DisplayFor(modelItem => item.Name)</li>
+        </ul>
+    }
+</ul>

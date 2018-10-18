@@ -1,0 +1,23 @@
+﻿@model MyRestaurant.ViewModels.TableViewModel
+
+@{
+    ViewBag.Title = "New";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>New Table</h2>
+
+@using (@Html.BeginForm("Save", "Tables"))
+{
+    <div class="form-group">
+        @Html.LabelFor(t => t.Table.Name)
+        @Html.TextBoxFor(t => t.Table.Name, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(t => t.Table.NumberOfSeats)
+        @Html.TextBoxFor(t => t.Table.NumberOfSeats, new { @class = "form-control" })
+    </div>  
+
+    @Html.HiddenFor(r => r.Table.Id)
+    <button type="submit" class="btn btn-primary">Save</button>
+}
