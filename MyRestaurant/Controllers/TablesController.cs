@@ -60,6 +60,7 @@ namespace MyRestaurant.Controllers
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Save(Table table)
         {
             if (table.Id == 0)
