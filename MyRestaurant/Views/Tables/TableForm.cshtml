@@ -9,19 +9,15 @@
 
 @using (@Html.BeginForm("Save", "Tables"))
 {
-    @Html.ValidationSummary(true, "Complete the required fields.")
     <div class="form-group">
         @Html.LabelFor(t => t.Table.Name)
         @Html.TextBoxFor(t => t.Table.Name, new { @class = "form-control" })
-        @Html.ValidationMessageFor(t=>t.Table.Name)
     </div>
     <div class="form-group">
         @Html.LabelFor(t => t.Table.NumberOfSeats)
         @Html.TextBoxFor(t => t.Table.NumberOfSeats, new { @class = "form-control" })
-        @Html.ValidationMessageFor(t=>t.Table.NumberOfSeats)
     </div>  
 
     @Html.HiddenFor(r => r.Table.Id)
-    @Html.AntiForgeryToken()
     <button type="submit" class="btn btn-primary">Save</button>
 }
