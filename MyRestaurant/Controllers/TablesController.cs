@@ -53,6 +53,7 @@ namespace MyRestaurant.Controllers
 
             var viewModel = new TableViewModel
             {
+                Table = new Table(),
                 Reservations = reservations
             };
 
@@ -63,6 +64,17 @@ namespace MyRestaurant.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Save(Table table)
         {
+            if (!ModelState.IsValid)
+            {
+                var viewModel = new TableViewModel
+                {
+                    Table = table,
+                    Reservations = _context.Reservations.ToList()
+                };
+
+                return View("TableForm", viewModel);
+            }
+
             if (table.Id == 0)
                 _context.Tables.Add(table);
             else
@@ -70,7 +82,7 @@ namespace MyRestaurant.Controllers
                 var tableInDb = _context.Tables.Single(t => t.Id == table.Id);
                 tableInDb.Name = table.Name;
                 tableInDb.NumberOfSeats = table.NumberOfSeats;
-                tableInDb.Reservations = table.Reservations;
+                //tableInDb.Reservations = table.Reservations;
             }
             _context.SaveChanges();
 

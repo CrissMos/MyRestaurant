@@ -46,6 +46,7 @@ namespace MyRestaurant.Controllers
             var tables = _context.Tables.ToList();
             var viewModel = new ReservationViewModel
             {
+                Reservation=new Reservation(),
                 Tables = tables
             };
 
@@ -53,8 +54,20 @@ namespace MyRestaurant.Controllers
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Save(Reservation reservation)
         {
+            if (!ModelState.IsValid)
+            {
+                var viewModel = new ReservationViewModel
+                {
+                    Reservation = reservation,
+                    Tables = _context.Tables.ToList()
+                };
+
+                return View("ReservationForm", viewModel);
+            }
+
             if (reservation.Id == 0)
                 _context.Reservations.Add(reservation);
             else

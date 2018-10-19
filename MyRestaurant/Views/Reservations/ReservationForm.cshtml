@@ -11,21 +11,28 @@
     <div class="form-group">
         @Html.LabelFor(r => r.Reservation.Number)
         @Html.TextBoxFor(r => r.Reservation.Number, new { @class = "form-control" })
+        @Html.ValidationMessageFor(r => r.Reservation.Number)
     </div>
     <div class="form-group">
         @Html.LabelFor(r => r.Reservation.Name)
         @Html.TextBoxFor(r => r.Reservation.Name, new { @class = "form-control" })
+        @Html.ValidationMessageFor(r => r.Reservation.Name)
+
     </div>
     <div class="form-group">
         @Html.LabelFor(r => r.Reservation.Date)
         @Html.TextBoxFor(r => r.Reservation.Date, "{0:d MMM yyyy}", new { @class = "form-control" })
+        @Html.ValidationMessageFor(r => r.Reservation.Date)
     </div>
     <div class="form-group">
         @Html.LabelFor(r => r.Reservation.TableId)
-        @Html.DropDownListFor(r => r.Reservation.TableId, new SelectList(Model.Tables,"Id", "Name"), "", new { @class = "form-control" })
+        @Html.DropDownListFor(r => r.Reservation.TableId, new SelectList(Model.Tables, "Id", "Name"), "", new { @class = "form-control" })
+        @Html.ValidationMessageFor(r => r.Reservation.TableId)
     </div>
 
     @Html.HiddenFor(r => r.Reservation.Id)
+    @Html.AntiForgeryToken()
     <button type="submit" class="btn btn-primary">Save</button>
+    @Html.ActionLink("Cancel", "Index")
 }
 
